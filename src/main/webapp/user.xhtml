@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xml:lang="en" lang="en"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <script type="application/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
+
+    <script type="application/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="fortune.css"/>
+    <title>Users</title>
+
+</h:head>
+<body>
+<div class="container">
+    <c:set var="user" value="#{userBean.getUserById(param['id'])}"/>
+   <h1> Welcome  <h:outputText value="#{user.firstName} #{user.lastName}" />  </h1>
+    <p>Alive since: <h:outputText value="#{user.birthDate}"/> </p>
+    <a href="form.xhtml"> Add new user</a>
+
+
+
+
+</div>
+
+</body>
+</html>
