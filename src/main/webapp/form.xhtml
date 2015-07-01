@@ -27,9 +27,12 @@
         <div class="form">Birthdate: <h:inputText value="#{userBean.user.birthDate}" class="form-control" id="birthDate"></h:inputText></div>
 
         <br></br>
-        <h:commandButton value="Add user" action="#{userBean.addUser()}" class="btn btn-primary"/>
-    </h:form>
-    </div>
+        <h:commandButton value="Add user" action="#{userBean.addUser()}" class="col-md-6 btn btn-primary"/>
+        </h:form>
 
+        <h:link  outcome="allusers" styleClass="col-md-6 btn btn-danger">
+            cancel
+        </h:link>
+    </div>
 </body>
 </html>

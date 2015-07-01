@@ -21,6 +21,19 @@
 <body>
 <div class="container">
     <h1> All Users</h1>
+    <div class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-brand">
+                   Welcome
+            </div>
+            <div class="navbar-brand">
+                <h:link outcome="form">Add user</h:link>
+            </div>
+            <div class="navbar-brand">
+                <h:link outcome="fortune">Get a fortune cookie</h:link>
+            </div>
+        </div>
+    </div>
 <h:dataTable value="#{userRepository.findAll()}" var="users" class="table">
     <h:column>
         <f:facet name="header">
@@ -46,8 +59,19 @@
         </f:facet>
         <h:outputText value="#{users.birthDate}"/>
     </h:column>
+    <h:column>
+        <f:facet name="header"/>
+        <h:link  outcome="user">
+            <f:param name="id" value="#{users.id}"/>
+            <span class="glyphicon glyphicon-user" ></span>
+        </h:link>
+    </h:column>
 </h:dataTable>
-    <div><a href="form.faces" class="btn btn-primary">Add User</a></div>
+
+    <div><h:link outcome="form"  styleClass="btn btn-success">
+        <span class="glyphicon glyphicon-plus" ></span>
+        Add User
+    </h:link> </div>
 
 </div>
 </body>
