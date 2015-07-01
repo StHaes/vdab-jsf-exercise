@@ -17,15 +17,15 @@
 
 </h:head>
 <body>
-<c:set var="user" />
     <div class="container" >
         <div><h1>Please fill in the form below.</h1></div>
         <h:form>
-        <div class="form">First name: <h:inputText value="#{user.firstName}" class="form-control"></h:inputText></div>
+        <div class="form">First name: <h:inputText value="#{userBean.user.firstName}" class="form-control" id="firstName"></h:inputText></div>
 
-        <div class="form">Last name: <h:inputText value="#{user.lastName}" class="form-control"></h:inputText></div>
+        <div class="form">Last name: <h:inputText value="#{userBean.user.lastName}" class="form-control" id="lastName"></h:inputText></div>
 
-        <div class="form">Birthdate: <h:inputText value="#{user.birthDate}" class="form-control"></h:inputText></div>
+        <div class="form">Birthdate: <h:inputText value="#{userBean.user.birthDate}" class="form-control" id="birthDate"></h:inputText></div>
+
         <br></br>
         <h:commandButton value="Add user" action="#{userBean.addUser()}" class="btn btn-primary"/>
     </h:form>

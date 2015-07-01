@@ -5,9 +5,11 @@ import be.vdab.domain.User;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Named
+@Transactional
 public class UserRepository {
     @PersistenceContext
     private EntityManager entityManager;

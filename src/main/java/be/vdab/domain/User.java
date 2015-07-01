@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +21,7 @@ public class User {
     /**
      * Used by JPA.
      */
-    protected User() {
+    public User() {
     }
 
     public User(String firstName, String lastName, String birthDate) {

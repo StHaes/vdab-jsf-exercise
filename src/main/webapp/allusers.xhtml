@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xml:lang="en" lang="en">
+<h:head>
+    <script type="application/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
+
+    <script type="application/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="fortune.css"/>
+    <title>AllUsers</title>
+
+</h:head>
+
+
+<body>
+<div class="container">
+    <h1> All Users</h1>
+<h:dataTable value="#{userRepository.findAll()}" var="users" class="table">
+    <h:column>
+        <f:facet name="header">
+            <h:outputText value="Id"/>
+        </f:facet>
+        <h:outputText value="#{users.id}"/>
+    </h:column>
+    <h:column>
+        <f:facet name="header">
+            <h:outputText value="First Name"/>
+        </f:facet>
+        <h:outputText value="#{users.firstName}"/>
+    </h:column>
+    <h:column>
+        <f:facet name="header">
+            <h:outputText value="Last Name"/>
+        </f:facet>
+        <h:outputText value="#{users.lastName}"/>
+    </h:column>
+    <h:column>
+        <f:facet name="header">
+            <h:outputText value="Birthdate"/>
+        </f:facet>
+        <h:outputText value="#{users.birthDate}"/>
+    </h:column>
+</h:dataTable>
+    <div><a href="form.faces" class="btn btn-primary">Add User</a></div>
+
+</div>
+</body>
+</html>
