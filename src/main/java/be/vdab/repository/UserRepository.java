@@ -22,14 +22,11 @@ public class UserRepository {
     }
     public void save(User user){
         entityManager.merge(user);
-<<<<<<< HEAD
-    }
 
-=======
-}
+    }
 
     public void remove(int id) {
         entityManager.remove(entityManager.getReference(User.class, id));
     }
->>>>>>> bfd3bfae7cf6a173c46bbc9767db95e026a982d5
+
 }

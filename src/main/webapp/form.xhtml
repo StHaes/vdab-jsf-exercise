@@ -2,7 +2,8 @@
 <!DOCTYPE html
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xml:lang="en" lang="en"
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xml:lang="en" lang="en"
       xmlns:h="http://java.sun.com/jsf/html">
 <h:head>
     <script type="application/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -24,7 +25,10 @@
 
         <div class="form">Last name: <h:inputText value="#{userBean.user.lastName}" class="form-control" id="lastName"></h:inputText></div>
 
-        <div class="form">Birthdate: <h:inputText value="#{userBean.user.birthDate}" class="form-control" id="birthDate"></h:inputText></div>
+        <div class="form">Birthdate: <h:inputText value="#{userBean.user.birthDate}" class="form-control" id="birthDate" >
+            <f:convertDateTime pattern="d/MM/y" />
+        </h:inputText></div>
+            <span ><h:message class="btn btn-warning" for="birthDate" value="Not a valid date."/></span>
 
         <br></br>
         <h:commandButton value="Add user" action="#{userBean.addUser()}" class="col-md-6 btn btn-primary"/>

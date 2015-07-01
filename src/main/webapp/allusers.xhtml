@@ -13,6 +13,7 @@
     <script type="application/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="fortune.css"/>
+
     <title>AllUsers</title>
 
 </h:head>
@@ -23,13 +24,13 @@
     <h1> All Users</h1>
     <div class="navbar navbar-default">
         <div class="container-fluid">
-            <div class="navbar-brand">
+            <div class="navbar-brand" >
                    Welcome
             </div>
-            <div class="navbar-brand">
+            <div class="navbar-brand" >
                 <h:link outcome="form">Add user</h:link>
             </div>
-            <div class="navbar-brand">
+            <div class="navbar-brand" >
                 <h:link outcome="fortune">Get a fortune cookie</h:link>
             </div>
         </div>
@@ -57,14 +58,17 @@
         <f:facet name="header">
             <h:outputText value="Birthdate"/>
         </f:facet>
-        <h:outputText value="#{users.birthDate}"/>
+        <h:outputText value="#{users.birthDate}"><f:convertDateTime pattern="d/MM/y"/> </h:outputText>
     </h:column>
     <h:column>
         <f:facet name="header"/>
-        <h:link  outcome="user">
+        <h:form>
+        <h:link  styleClass="btn btn-primary" outcome="user">
             <f:param name="id" value="#{users.id}"/>
-            <span class="glyphicon glyphicon-user" ></span>
+            <span class="glyphicon glyphicon-user"></span>
         </h:link>
+        <h:commandLink value="Delete" action="#{userRepository.remove(users.id)}" class="btn btn-danger"/>
+        </h:form>
     </h:column>
 </h:dataTable>
 

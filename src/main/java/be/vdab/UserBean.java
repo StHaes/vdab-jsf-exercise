@@ -29,4 +29,9 @@ public class UserBean {
     public User getUser() {
         return user;
     }
+
+    public String deleteUser(int id){
+        userRepository.remove(id);
+        return "allusers";
+    }
 }

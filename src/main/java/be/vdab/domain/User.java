@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Past;
+import java.util.Date;
 
 @Entity
 
@@ -15,8 +17,8 @@ public class User {
     private String firstName;
 
     private String lastName;
-
-    private String birthDate;
+    @Past
+    private Date birthDate;
 
     /**
      * Used by JPA.
@@ -24,7 +26,7 @@ public class User {
     public User() {
     }
 
-    public User(String firstName, String lastName, String birthDate) {
+    public User(String firstName, String lastName, Date birthDate) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = birthDate;
@@ -54,11 +56,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getBirthDate() {
+    public Date getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) {
+    public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
 }
